@@ -7,13 +7,15 @@ services:
       MYSQL_DATABASE: root
     ports:
       - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
 
   web:
     build: .
     command: bundle exec rails s -p 3000 -b '0.0.0.0'
     volumes:
       - .:/app_name
-      - bundle:/bundle
+      - bundle:/usr/local/bundle
     ports:
       - "3000:3000"
     links:
@@ -21,4 +23,4 @@ services:
 
 volumes:
   bundle:
-    driver: local
+  mysql_data:
