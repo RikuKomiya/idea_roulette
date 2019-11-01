@@ -1,9 +1,33 @@
 @import "bootstrap";
+@import url('https://fonts.googleapis.com/css?family=Kosugi|Noto+Serif+JP&display=swap');
 *{
   color: white;
+  text-align: center;
+  font-family: 'Noto Serif JP', serif;
 }
+
 .bg{
   height: 100vh;
   width: 100vw;
   background-color: #f9cb0f;
+}
+
+input{
+  outline: none;
+  border: none;
+  background: none;
+}
+.input{
+  border-bottom: 2px solid white;
+}
+
+li{
+  list-style: none;
+}
+
+.word-form{
+  font-size: 1.5rem;
+  #word_name{
+    font-size: 2rem;
+  }
 }

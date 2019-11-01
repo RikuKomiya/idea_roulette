@@ -1,2 +1,11 @@
-h1 Words#new
-p Find me in app/views/words/new.html.slim
+= provide(:title, '単語登録')
+=render partial:'shared/error', locals: {model: @word}
+.row
+  .col-md-6.offset-md-3.mt-5
+    = form_for @word do |f|
+      .word-form
+        .form-group
+          = f.label :name, '単語'
+          .input
+            = f.text_field :name, autocomplete: "false"
+        = f.submit '登録'

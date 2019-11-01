@@ -1,0 +1,13 @@
+= provide :title, '単語一覧'
+table.table.table-hover
+  thead.thead-light
+    tr
+      th ID
+      th 単語名
+      th
+  tbody
+    - @words.each do |word|
+      tr
+        th= word.id
+        td= word.name
+        td= link_to '削除', word_path(word), method: :delete

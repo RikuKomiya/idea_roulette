@@ -2,7 +2,7 @@ doctype html
 html
   head
     title
-      | AppName
+      | IdeaRoulette|#{yield :title}
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
@@ -11,4 +11,5 @@ html
     .bg
       = render 'layouts/navbar'
       .container
+        = render 'shared/devise_flash'
         = yield
