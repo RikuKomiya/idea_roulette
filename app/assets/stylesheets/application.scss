@@ -7,7 +7,7 @@
 }
 
 .bg{
-  height: 100vh;
+  min-height: 100vh;
   width: 100vw;
   background-color: #f9cb0f;
 }
@@ -31,3 +31,34 @@ li{
     font-size: 2rem;
   }
 }
+
+nav{
+  .nav-item:hover{
+    background-color: white;
+  }
+}
+
+.idea-roulette{
+  padding-top: 120px;
+  border-bottom: solid 2px white;
+  min-height: 320px;
+  .word-box{
+    width: 100%;
+    min-height: 80px;
+    border: solid 2px white;
+    padding: 10px;
+  }
+
+  .x-image{
+    height: 80px;
+    padding: 10px;
+  }
+  .roulette-button-wrapper{
+    width: 100%;
+    height: 40px;
+    padding: 20px;
+  }
+}
+
+
+

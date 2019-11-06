@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_30_051715) do
+ActiveRecord::Schema.define(version: 2019_11_05_144728) do
+
+  create_table "two_word_associates", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "word1_id"
+    t.bigint "word2_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["word1_id", "word2_id"], name: "index_two_word_associates_on_word1_id_and_word2_id", unique: true
+    t.index ["word1_id"], name: "index_two_word_associates_on_word1_id"
+    t.index ["word2_id"], name: "index_two_word_associates_on_word2_id"
+  end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -36,4 +46,6 @@ ActiveRecord::Schema.define(version: 2019_10_30_051715) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "two_word_associates", "words", column: "word1_id"
+  add_foreign_key "two_word_associates", "words", column: "word2_id"
 end
