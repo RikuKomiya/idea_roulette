@@ -2,12 +2,12 @@
   .row
     .col-sm-5
       .word-box
-        h1= @twa.word1.name
+
     .col-sm-2
       .x-image
         =image_tag 'x.png'
     .col-sm-5
       .word-box
-        h1= @twa.word2.name
+
     .roulette-button-wrapper
-      =link_to 'もう一回', root_path, class: 'btn btn-primary'
+      =link_to 'ルーレットを回す', new_idea_path, class: 'btn btn-primary'

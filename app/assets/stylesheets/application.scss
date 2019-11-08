@@ -39,16 +39,15 @@ nav{
 }
 
 .idea-roulette{
-  padding-top: 120px;
+  padding-top: 100px;
   border-bottom: solid 2px white;
-  min-height: 320px;
+  min-height: 300px;
   .word-box{
     width: 100%;
     min-height: 80px;
     border: solid 2px white;
     padding: 10px;
   }
-
   .x-image{
     height: 80px;
     padding: 10px;
@@ -60,5 +59,15 @@ nav{
   }
 }
 
+.idea-form-wrapper{
+  width: 100%;
+  border-right:solid 2px white;
+  padding: 20px;
+  .idea-form{
+    margin-top: 30px;
+    text-align: left;
+
+  }
+}
 
 

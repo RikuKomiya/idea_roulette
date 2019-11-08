@@ -1,5 +1,5 @@
 require 'rails_helper'
 
-RSpec.describe "words/home.html.slim", type: :view do
+RSpec.describe "ideas/home.html.slim", type: :view do
   pending "add some examples to (or delete) #{__FILE__}"
 end

@@ -1,0 +1,31 @@
+.idea-roulette
+  .row
+    .col-sm-5
+      .word-box
+        h1= @twa.word1.name
+    .col-sm-2
+      .x-image
+        =image_tag 'x.png'
+    .col-sm-5
+      .word-box
+        h1= @twa.word2.name
+    .roulette-button-wrapper
+      =link_to 'もう一回', new_idea_path, class: 'btn btn-primary'
+.row
+  .idea-form-wrapper.col-sm-8
+    h3 あなたのアイデアを書こう！！
+    = form_for @idea do |f|
+      .idea-form.form-group.row
+        .col-4
+          = f.label :name, '名称'
+        .col-8
+          = f.text_field :name, class: 'form-control idea-form-input'
+      .form-group.row
+        .col-4
+          =f.label :description, '詳細'
+        .col-8
+          = f.text_area :description, row: 5,size:"20x10",  class: 'form-control idea-form-input'
+
+          =f.hidden_field :twa_id, value: @twa.id
+      = f.submit '確認', class: 'btn btn-primary'
+  .col-sm-4
