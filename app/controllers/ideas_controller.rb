@@ -15,11 +15,6 @@ class IdeasController < ApplicationController
     end
   end
 
-
-
-
-
-
   private
   def idea_params
     params.require(:idea).permit(:name, :description)
