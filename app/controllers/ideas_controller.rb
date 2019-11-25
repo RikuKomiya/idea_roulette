@@ -1,13 +1,17 @@
 class IdeasController < ApplicationController
   before_action :spin_words_roulette, only: [:new]
 
+  def index
+    @ideas = Idea.all
+  end
+
   def new
     @idea = @twa.ideas.new
   end
 
   def create
-    twa = TwoWordAssociate.find(params[:idea][:twa_id])
-    @idea = twa.ideas.new(idea_params)
+    @twa = TwoWordAssociate.find(params[:idea][:twa_id])
+    @idea = @twa.ideas.new(idea_params)
     if @idea.save
       redirect_to root_path, notice: "「#{@idea.name}」を作成しました"
     else
@@ -17,7 +21,7 @@ class IdeasController < ApplicationController
 
   private
   def idea_params
-    params.require(:idea).permit(:name, :description)
+    params.require(:idea).permit(:name, :description, :user_id)
   end
 
   def spin_words_roulette

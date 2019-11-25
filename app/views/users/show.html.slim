@@ -1,0 +1,12 @@
+
+  .user-info
+    .row
+      .col-4
+        .user-image-wrapper
+         = image_tag(current_user.image, class: 'user-image')
+      .col-8
+        .user-name
+          = current_user.nickname
+  - current_user.ideas.each do |idea|
+    ul
+      li= idea.name

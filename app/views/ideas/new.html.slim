@@ -1,3 +1,4 @@
+=render partial:'shared/error', locals: {model: @idea}
 .idea-roulette
   .row
     .col-sm-5
@@ -27,5 +28,6 @@
           = f.text_area :description, row: 5,size:"20x10",  class: 'form-control idea-form-input'
 
           =f.hidden_field :twa_id, value: @twa.id
+          =f.hidden_field :user_id, value: current_user.id
       = f.submit '確認', class: 'btn btn-primary'
   .col-sm-4

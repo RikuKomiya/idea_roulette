@@ -70,4 +70,27 @@ nav{
   }
 }
 
+.user-info{
+  width: 100%;
+  height: 300px;
+  text-align: left;
+  padding: 50px;
+  .user-image-wrapper{
+    text-align: right;
+    .user-image{
+      width: 80px;
+      height: 80px;
+    }
+  }
+  .user-name{
+    width: 80%;
+    height: 80px;
+    padding-top: 20px;
+    font-size: 2rem;
+    border-bottom: 2px solid white;
+  }
+}
+
+
+
 

@@ -1,0 +1,11 @@
+.row
+  .col-md-8.offset-md-2
+    table.table.table-hover
+      .thead.thead-light
+        tr
+          th ID
+          th Name
+        - @users.each do |user|
+          tr
+            td= user.id
+            td= link_to "#{user.nickname}", user_path(user)

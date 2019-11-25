@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  has_many :ideas
   devise :database_authenticatable, :registerable,
         :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable,omniauth_providers: %i[twitter]
@@ -12,6 +13,7 @@ class User < ApplicationRecord
           uid:      auth.uid,
           provider: auth.provider,
           nickname:     auth.info.name,
+          image: auth.info.image,
           email:    User.dummy_email(auth),
           password: Devise.friendly_token[0, 20]
       )
